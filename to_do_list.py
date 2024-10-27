@@ -25,12 +25,15 @@ def print_task(list_of_tasks):
       print(f" {index}. {task}")
 
 def add_task_gui():
-  task_text = task_entry.get().strip()
-  if task_text:
-    task_list.add_task(task_text)
-    update_task_list()
-
+    task_text = task_entry.get().strip()
+    if task_text:
+        task_list.add_task(task_text)
+        update_task_list()
+    
 def delete_task_gui():
-  index = task_listbox.curselection()
-  if index:
-    task_list.delete_task(index[0])
+    index = task_listbox.curselection()
+    if index:
+        task_list.delete_task(index[0])
+        update_task_list()
+    else:
+        messagebox.showwarning("warning","please select a task to delete")
